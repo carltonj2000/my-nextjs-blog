@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { InferGetStaticPropsType } from "next";
 import styled from "@emotion/styled";
+import { FeedbackForm } from "@components/FeedbackForm";
 
 const Container = styled.div`
   min-height: 100vh;
@@ -59,6 +60,7 @@ export default function Home({
         <Link href="/about">
           <a>About</a>
         </Link>
+        <FeedbackForm />
         <List>
           {posts.map((post) => (
             <Link href="/posts/[id]" as={`/posts/${post.id}`} key={post.id}>
