@@ -1,30 +1,20 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js, TypeScript, Emotion and Netlify Egghead Course
 
-## Getting Started
-
-First, run the development server:
+The code in this repository is based on the following video course:
+[Build a site from scratch with Next.js, TypeScript, Emotion and Netlify](https://egghead.io/playlists/build-a-blog-with-next-js-typescript-emotion-and-netlify-adcc)
 
 ```bash
-npm run dev
-# or
-yarn dev
+npx create-nextjs-app my-nextjs-blog
+touch tsconfig.json # in the my-nextjs-blog directory
+npm run dev # this will now provide you with typescript setup instructions
+yarn add --dev typescript @types/react @types/node # above cmd recommends this
+npm run dev # this overwrites tsconfig.json with a project specific setup
+vi tsconfig.json # set strict: true and strictNullChecks: true
+mv index.js index.tsx # add title with ts const string and delete all but title
+mv _app.js _app.tsx # restart dev server and import AppProps from "next/app"
+vi styles/globals.css # change the font to "Comic Sans MS"
+yarn add @emotion/core @emotion/styled
+vi index.tsx # copy Home.module.css styles to <Container>, <Main>, <BlogTitle>
+vi tsconfig.json # "baseUrl": "./", "paths": {"@components/*": ["components/*"]}
+vi package.json # "export" : "next export"
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
